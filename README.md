@@ -10,7 +10,9 @@ It includes:
 Everything runs in the browser — no backend needed.
 
 ---
+## 🔗 Live Demo
 
+🌍 [Visit the Website](https://alanjoseph77.github.io/mnist-digit-classifier-js/)
 ## 📂 Project Pages
 
 ### 1. ✍️ **Handwritten Digit Recognition**
@@ -67,18 +69,18 @@ You can download the MNIST CSV dataset here:
 
 ## 🚀 Live Demo
 
-Host this project using **GitHub Pages**:
+Host this project using **GitHub Pages**:(https://alanjoseph77.github.io/mnist-digit-classifier-js/).
 
 You can also open the files locally in your browser:
 - `index.html` → for digit drawing & recognition
-- `test.html` → for training and testing via CSV
+- `handwritten.html` → for training and testing via CSV
 
 ---
 
 ## ⚠️ Important Notes
 
 - `index.html` works entirely **without TensorFlow**.
-- `test.html` **uses TensorFlow.js** — if you want a fully custom neural net, you'll need to replace this with your own JS-based model.
+- `handwritten.html` **uses TensorFlow.js** — if you want a fully custom neural net, you'll need to replace this with your own JS-based model.
 - No internet connection is required after initial load.
 
 ---
