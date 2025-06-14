@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visualization of a Neural Net for Handwritten Digit Recognition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./styles.css" rel="stylesheet" />
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./visualize.js"></script>
+</head>
+<body style="padding:5px;">
+ 
+
+  <div class="container">
+    <!-- ✍️ Handwriting Box -->
+    <div class="section">
+       <h1 class="title"> Handwritten Digit Recognition </h1>
+    
+      <p class="instruction">
+        This is an interactive demonstration of how handwritten numbers are classified by a neural network.<br>
+        Draw your digit in the leftmost box, and click "Recognize", or "Clear" to start over.
+      </p>
+
+      <div class="main_div">
+        <div class="boxes" style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center">
+          <!-- Drawing Canvas -->
+          <div>
+            <div class="drawing_div">
+              <canvas id="can" width="280" height="280" style="border:1px solid; margin: 10px; cursor: crosshair;"></canvas>
+              <div id="nnInput"></div>
+            </div>
+            <div class="selection_div">
+              <div style="float:left;padding-right:10px;">
+                <button class="btn btn-clear" id="clr" onclick="erase()">Clear</button>
+              </div>
+              <div style="float:left;">
+                <button class="btn btn-recognize" id="recognize" onclick="recognize()">Recognize</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Scale -->
+          <div id="color_scale">
+            <p>0.0 -</p><p>0.2 -</p><p>0.4 -</p><p>0.6 -</p><p>0.8 -</p><p>1.0 -</p>
+          </div>
+
+          <!-- Input Layer -->
+          <div>
+            <div class="sqare_layer_box">
+              <div style=" height: 280px; display: inline-block; margin: 10px; border: 1px solid">
+                <canvas id="input_layer_canvas" width="280" height="280"></canvas>
+              </div>
+              <p class="layer_details">Preprocessed Input,<br>784 neurons<br>(28*28)</p>
+            </div>
+          </div>
+
+          <!-- Hidden Layer -->
+          <div>
+            <div class="sqare_layer_box">
+              <div id="layer2" style=" height: 280px; width: 280px; display: inline-block; margin: 10px; border: 1px solid"></div>
+              <p class="layer_details">Second Layer,<br>196 neurons<br>(14*14)</p>
+            </div>
+          </div>
+
+          <!-- Output Layer -->
+          <div class="div-block-4">
+            <div class="div-block">
+              <div id="layer3" class="output_graph"></div>
+              <div class="scale_div">
+                <div class="vertical-numbers">9<br>8<br>7<br>6<br>5<br>4<br>3<br>2<br>1<br>0</div>
+              </div>
+            </div>
+            <p class="layer_details_2">Output layer,<br>10 neurons<br>(1*10)</p>
+          </div>
+
+          <!-- Output Digit -->
+          <div style="justify-content: center; margin-left: 20px">
+            <div id="interpr_out">
+              <div style="font-size:100px; text-align: center; border-bottom: 1px solid;" id="nnOut"></div>
+            </div>
+            <p class="layer_details_3">Interpreted<br>Output</p>
+          </div>
+        </div>
+      </div>
+      <!-- 📄 Go to Classifier Page Button -->
+    <div style="margin-top: 40px; margin-left: 5vw; text-align: left;">
+      <button onclick="window.location.href='index.html'" class="btn">Go to Classifier Page</button>
+    </div>
+  </div>
+    </div>
+
+    
+
+  <script src="./classify.js" type="text/javascript"></script>
+</body>
+</html>
