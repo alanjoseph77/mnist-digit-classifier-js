@@ -16,7 +16,7 @@ Everything runs in the browser — no backend needed.
 ## 📂 Project Pages
 
 ### 1. ✍️ **Handwritten Digit Recognition**
-**File:** `index.html`
+**File:** `handwritten.html`
 
 - Draw a digit on the canvas.
 - Preprocessing visualizes the digit into a 784-neuron input layer.
@@ -25,7 +25,7 @@ Everything runs in the browser — no backend needed.
 - No external ML libraries are used here.
 
 ### 2. 📁 **CSV Upload & Model Training**
-**File:** `test.html`
+**File:** `index.html`
 
 - Upload MNIST **training** and **test** CSV files.
 - Configure model parameters:
@@ -72,15 +72,15 @@ You can download the MNIST CSV dataset here:
 Host this project using **GitHub Pages**:(https://alanjoseph77.github.io/mnist-digit-classifier-js/).
 
 You can also open the files locally in your browser:
-- `index.html` → for digit drawing & recognition
-- `handwritten.html` → for training and testing via CSV
+- `handwritten.html` → for digit drawing & recognition
+- `index.html` → for training and testing via CSV
 
 ---
 
 ## ⚠️ Important Notes
 
-- `index.html` works entirely **without TensorFlow**.
-- `handwritten.html` **uses TensorFlow.js** — if you want a fully custom neural net, you'll need to replace this with your own JS-based model.
+- `handwritten.html` works entirely **without TensorFlow**.
+- `index.html` **uses TensorFlow.js** — if you want a fully custom neural net, you'll need to replace this with your own JS-based model.
 - No internet connection is required after initial load.
 
 ---
