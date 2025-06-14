@@ -494,9 +494,40 @@ function init() {
   canvas = document.getElementById('can');
   ctx = canvas.getContext("2d");
 
-  canvas.addEventListener("mousemove", function (e) { findxy('move', e); }, false);
-  canvas.addEventListener("mousedown", function (e) { findxy('down', e); }, false);
-  canvas.addEventListener("mouseup", function (e) { findxy('up', e); }, false);
-  canvas.addEventListener("mouseout", function (e) { findxy('out', e); }, false);
+ canvas.addEventListener("mousedown", function (e) {
+    paintFlag = true;
+    draw(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
+});
+
+canvas.addEventListener("mouseup", function (e) {
+    paintFlag = false;
+});
+
+canvas.addEventListener("mousemove", function (e) {
+    if (paintFlag) {
+        draw(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
+    }
+});
+
+// ✅ Add these for mobile:
+canvas.addEventListener("touchstart", function (e) {
+    e.preventDefault();
+    const touch = e.touches[0];
+    paintFlag = true;
+    draw(touch.pageX - canvas.offsetLeft, touch.pageY - canvas.offsetTop);
+});
+
+canvas.addEventListener("touchend", function (e) {
+    paintFlag = false;
+});
+
+canvas.addEventListener("touchmove", function (e) {
+    e.preventDefault();
+    const touch = e.touches[0];
+    if (paintFlag) {
+        draw(touch.pageX - canvas.offsetLeft, touch.pageY - canvas.offsetTop);
+    }
+});
+
 }
 init();
